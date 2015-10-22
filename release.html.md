@@ -4,8 +4,8 @@ title: KLA for Pivotal Cloud Foundry
 
 Release notes for [KLA for Pivotal Cloud Foundry](https://network.pivotal.io/products/p-knowtify)
 
-### 0.1.1.beta.0
-**Release Date: 23rd October 2015**
+### 0.1.1
+**Beta Release Date: 22 October 2015**
 
 #### Overview
 
