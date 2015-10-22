@@ -26,7 +26,7 @@ Starting with beta version 0.1.1 an upgrade path will be provided  to upgrade fr
 
 ## Installation Steps Using Pivotal Ops Manager and User Documentaion Provided at:
 
-   http://www.issinc.com/wp-content/uploads/KLA-documentation.pdf 
+   http://www.issinc.com/wp-content/uploads/KLA_Pivotal.pdf 
 
 ## Feedback
 
