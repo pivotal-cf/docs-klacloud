@@ -1,8 +1,8 @@
 ---
-title: KLA for Pivotal Cloud Foundry
+title: KLA for Pivotal Cloud Foundry&reg;
 ---
 
-# Resource requirements for KLA for Pivotal Cloud Foundry
+# Resource requirements for KLA for Pivotal Cloud Foundry&reg;
 These are the default resource and IP requirements for installing the tile:
 <table border="1" class="nice">
 	<tr>
