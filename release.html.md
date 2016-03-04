@@ -1,5 +1,6 @@
 ---
 title: KLA for Pivotal Cloud Foundry&reg;
+owner: London Services
 ---
 
 Release notes for [KLA for Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/p-knowtify)

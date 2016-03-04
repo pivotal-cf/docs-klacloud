@@ -1,5 +1,6 @@
 ---
 title: KLA for Pivotal Cloud Foundry&reg;
+owner: London Services
 ---
 
 # Resource requirements for KLA for Pivotal Cloud Foundry&reg;

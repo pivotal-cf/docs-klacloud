@@ -1,5 +1,6 @@
 ---
 title: Knowtify Log Analytics (KLA) for Pivotal Cloud Foundry&reg;
+owner: London Services
 ---
 
 This is documentation for the [Knowtify Log Analytics - KLA for - Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/p-knowtify) tile
@@ -20,13 +21,13 @@ This is documentation for the [Knowtify Log Analytics - KLA for - Pivotal Cloud 
 
 ## Upgrading to the Latest Version
 
-Starting with beta version 0.1.1 an upgrade path will be provided  to upgrade from version 0.1.1 to future versions. 
+Starting with beta version 0.1.1 an upgrade path will be provided  to upgrade from version 0.1.1 to future versions.
 
 <p class="note"><strong>Note</strong>: Uninstalling previous versions of this tile will delete all data and saved dashboard settings.</p>
 
 ## Installation Steps Using Pivotal Ops Manager and User Documentation Provided at:
 
-   http://www.issinc.com/wp-content/uploads/KLA_Pivotal.pdf 
+   http://www.issinc.com/wp-content/uploads/KLA_Pivotal.pdf
 
 ## Feedback
 
