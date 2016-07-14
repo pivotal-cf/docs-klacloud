@@ -1,23 +1,31 @@
 ---
-title: Knowtify Log Analytics (KLA) for Pivotal Cloud Foundry&reg;
+title: ISS Knowtify Search Analytics for Pivotal Cloud Foundry&reg;
 owner: London Services
 ---
 
-This is documentation for the [Knowtify Log Analytics - KLA for - Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/p-knowtify) tile
+This documentation describes the ISS Knowtify Search Analytics tile for Pivotal Cloud Foundry&reg; (PCF).
 
-## Product snapshot
+<p class="note"><strong>Note</strong>: This product was previously known as Knowtify Log Analytics for Pivotal Cloud Foundry&reg;.</p>
+
+##<a id='overview'></a> Overview
+
+##<a id='snapshot'></a> Product Snapshot
 
 <dl>
-<dt>Current Knowtify Log Analytics for Pivotal Cloud Foundry&reg; Details</dt>
-<dd><strong>Version</strong>: v0.1.1 (Beta) </dd>
-<dd><strong>Beta Release Date</strong>: 22 October 2015</dd>
-<dd><strong>Software component version</strong>: Solr 4.10.0, SolrLogManager 1.0.0, Logstash 1.3.3 </dd>
-<dd><strong>Compatible Ops Manager Version(s)</strong>: 1.5.x, 1.4.x</dd>
-<dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.5.x, 1.4.x</dd>
-<dd><strong>vSphere support?</strong> Yes</dd>
-<dd><strong>AWS support?</strong> Yes</dd>
-<dd><strong>OpenStack support?</strong> TBD </dd>
+<dt>Current ISS Knowtify Search Analytics Tile for Pivotal Cloud Foundry Details</dt>
+<dd><strong>Version</strong>: v1.0.1.1 </dd>
+<dd><strong>Release date</strong>: July 15, 2016</dd>
+<dd><strong>Software component version</strong>: Knowtify Search Analytics v1.0.1.1</dd>
+<dd><strong>Compatible Ops Manager version(s)</strong>: 1.5.x, 1.6.x, 1.7.x</dd>
+<dd><strong>Compatible Elastic Runtime version(s)</strong>: 1.4.x, 1.5.x, 1.6.x, 1.7.x</dd>
+<dd><strong>vSphere support?</strong> </dd>
+<dd><strong>AWS support?</strong> </dd>
+<dd><strong>OpenStack support?</strong>  </dd>
 </dl>
+
+##<a id='feedback'></a> Feedback
+
+Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or to [ISS](mailto:knowtify@issinc.com).
 
 ## Upgrading to the Latest Version
 
@@ -29,7 +37,41 @@ Starting with beta version 0.1.1 an upgrade path will be provided  to upgrade fr
 
    http://www.issinc.com/wp-content/uploads/KLA_Pivotal.pdf
 
-## Feedback
+Overview
+This topic will be the landing page for the repo. It should follow the following format:
 
-Please provide any bugs, feature requests, or questions to [the Pivotal Cloud Foundry&reg; Feedback list](mailto:pivotal-cf-feedback@pivotal.io) and/or to knowtify@issinc.com.
+Overview
 
+Knowtify Search Analytics provides a scalable search engine install along with a powerful, server-based, dashboard that allows the viewing of timebased or non-timbased information.  
+
+Key Features
+
+Search Engine Install (Scalable)
+Dashboard for search
+Easy Log Viewing for Pivotal Cloud Foundry
+
+Partner Service Broker
+
+A Service Broker allows Cloud Foundry applications to bind to services and consume the services easily from App Manager UI or command line. The Partner Service Broker will enable you to use one or more Partner accounts and is deployed as a Java Application on Cloud Foundry. The Broker exposes the Partner service on the Cloud Foundry Marketplace and allows users to directly create a service instance and bind it to their applications either from the Pivotal Apps Manager Console or from the command line. 
+
+The PCF (Pivotal Cloud Foundry) Tile for Partner installs the Partner Service Broker as an application and registers it as a Service Broker on Cloud Foundry and exposes its service plans on the Marketplace.  This makes the installation and subsequent use of Partner on your Cloud Foundry applications simple and easy. 
+
+If trial license available => Customers interested in using Partner can obtain a 60 day free trial license from edit link here.
+
+Product Snapshot
+
+Current ISS Knowtify Search Analytics Tile for Pivotal Cloud Foundry Details
+Version: 1.0.1.1
+Release Date: July 15, 2016
+Software components versions: Knowtify Search Analytics 1.0.1.1
+Compatible Ops Manager Version(s): 1.5.x, 1.6.x, 1.7.x
+Compatible Elastic Runtime Version(s): 1.4.x, 1.5.x, 1.6.x, 1.7.x
+
+Requirements (or Prerequisites, Packaging Dependencies for Offline Buildpacks, 
+etc.)
+
+I don’t believe we have any prerequisites so long as Ops Manager and Elastic Runtime versions are within scope.
+
+Feedback
+
+Please provide any bugs, feature requests, or questions to the Pivotal Cloud Foundry Feedback list.
