@@ -3,11 +3,21 @@ title: ISS Knowtify Search Analytics for Pivotal Cloud Foundry&reg;
 owner: London Services
 ---
 
-This documentation describes the ISS Knowtify Search Analytics tile for Pivotal Cloud Foundry&reg; (PCF).
+This documentation describes the ISS Knowtify Search Analytics (KSA) tile for Pivotal Cloud Foundry&reg; (PCF).
 
 <p class="note"><strong>Note</strong>: This product was previously known as Knowtify Log Analytics for Pivotal Cloud Foundry&reg;.</p>
 
 ##<a id='overview'></a> Overview
+
+Knowtify Search Analytics (KSA) integrates log analytics and search, log ingestion and visualization in one platform.  Easy to deploy due to its integration with Pivotal Cloud Foundry, KSA is based on Apache Solr ®️, the highly scalable open source search project.  Cloud Foundry users are given near-real-time actionable knowledge with customizable analytic displays to support rapid decision-making. 
+
+The features of KSA include:
+
+* KSA is fully integrated with Pivotal Cloud Foundry & Cloud Foundry Loggregator
+* KSA was designed to be dynamically scalable to 50 nodes of Solr and hundreds of millions of documents
+* Monitor log data to track activity and quickly search and display custom dashboards to monetize insight
+* Visualize data from multiple data sources in one application
+* Detect and solve security-related events faster
 
 ##<a id='snapshot'></a> Product Snapshot
 
