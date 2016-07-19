@@ -3,6 +3,20 @@ title: KLA for Pivotal Cloud Foundry&reg;
 owner: London Services
 ---
 
+### 1.0.1
+
+**Release Date: 15th July 2016**
+
+Features included in this release:
+* General Availability release
+* Highly available SolrCloud configuration out of the box with 5 VMs
+* Requires stemcell 3262 
+* Version number  1.0.1.1
+* Release date  July 15, 2016
+* Dashboarding tool for SolrCloud 
+* Extensible SolrCloud (based on Solr 4.10)
+* SolrCloud management tooling
+
 Release notes for [KLA for Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/p-knowtify)
 
 ### 0.1.1
