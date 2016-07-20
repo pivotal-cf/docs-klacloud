@@ -1,0 +1,88 @@
+---
+title: Installing and Configuring ISS Knowtify Search Analytics 
+owner: London Services
+---
+
+This topic describes how to install and configure ISS Knowtify Search Analytics for Pivotal Cloud Foundry&reg; (PCF).
+
+Before installing the Knowtify Search Analytics tile, consult the [ISS Knowtify Search Analytics Resource Requirements](resources.html) topic. After installing the tile, follow the steps in the [Using the ISS Knowtify Search Analytics Dashboard](using.html) topic to access the ISS Knowtify Search Analytics Dashboard.
+
+##<a id='install'></a> Install and Configure the ISS Knowtify Search Analytics Tile
+
+1. Download the product file from Pivotal Network.
+
+1. Upload the product file on the Ops Manager Installation Dashboard.
+
+1. Click **Add** next to the uploaded ISS Knowtify Search Analytics tile in the Ops Manager **Available Products** view to add it to your staging area.
+
+1. Click the newly added tile.
+
+1. From the **Settings** tab, click **KLA-CLOUD Configuration** and enter the appropriate values for each field according to your PCF installation. The last five fields provide the optional ability to enter custom Grok lines that will be used by the Logstash component to parse log files. See the Grok [documentation](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html) for more information.
+
+1. Click **Save**.
+
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the ISS Knowtify Search Analytics tile.
+
+1. Follow the steps in the [Using the ISS Knowtify Search Analytics Dashboard](using.html) to access the ISS Knowtify Search Analytics Dashboard.
+
+##<a id='ingestion'></a> Configure Log Data Ingestion
+
+Operators can configure ISS Knowtify Search Analytics to ingest log data from PCF Elastic Runtime components or applications. 
+
+To configure log data ingestion, you must know your Logstash server IP address and port number. If you do not, perform the following steps to retrieve them:
+
+1. Navigate to the Ops Manager Installation Dashboard and click the ISS Knowtify Search Analytics tile.
+
+1. From the **Settings** tab, click **KLA-CLOUD Configuration**.
+
+1. Record the value for the **Logstash Listen Port**. The default is 9514.
+
+1. Click the **Status** tab.
+
+1. Record the value for the **Logstash Server IP address**.
+
+###<a id='elastic-runtime'></a> Ingest Log Data from Elastic Runtime Components
+
+To configure ISS Knowtify Search Analytics to ingest log data from PCF Elastic Runtime components, perform the following steps:
+
+1. Return to the Ops Manager Installation Dashboard and click the **Pivotal Elastic Runtime** tile.
+
+1. From the **Settings tab**, click **External Endpoints**.
+
+1. In the first box enter the Logstash Server IP address recorded above.
+
+1. In the second box enter the Logstash Listen Port recorded above.
+
+1. In the third box enter `TCP protocol`.
+
+1. Click **Save**.
+
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to apply the configuration settings.
+
+###<a id='apps'></a> Ingest Log Data from Applications
+
+To configure ISS Knowtify Search Analytics to ingest log data from applications, perform the following steps:
+
+1. [Download](https://github.com/cloudfoundry/cli#downloads) and install the Cloud Foundry Command Line Interface (cf CLI). For more information, see the [Installing the cf Command Line Interface](../pivotalcf/cf-cli/install-go-cli.html) topic.
+
+1. Create a user-provided service instance, replacing SERVICE-INSTANCE-NAME with the name of the instance, LOGSTASH-IP with your Logstash server IP address, and LOGSTASH-PORT with your Logstash server port number:
+	<pre class="terminal">$ cf cups SERVICE-INSTANCE-NAME -l syslog://LOGSTASH-IP:LOGSTASH-PORT</pre>
+
+1. List the applications in your space:
+	<pre class='terminal'>
+	$ cf apps  
+	Getting apps in org example / space development as admin...
+	OK
+	name                requested state   instances   memory   disk   urls
+	spring-music        started           1/1         1G       1G     spring-music.example.com 
+	</pre>
+
+1. Bind the service instance to the application you want to ingest logs from:
+	<pre class="terminal">$ cf bind-service APP-NAME SERVICE-INSTANCE-NAME</pre>
+
+	After binding the service instance, log data from the application begins to flow into the ISS Knowtify Search Analytics dashboard. 
+
+	<p class="note"><strong>Note: </strong> If log data from the application does not appear in the ISS Knowtify Search Analytics dashboard, restage the app with <code>cf restage APP-NAME</code> or repush the app with <code>cf push APP-NAME</code>.</p>
+
+
+

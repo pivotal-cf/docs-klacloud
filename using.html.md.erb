@@ -1,0 +1,194 @@
+---
+title: Using the ISS Knowtify Search Analytics Dashboard
+owner: London Services
+---
+
+This topic describes how to access and configure the ISS Knowtify Search Analytics dashboard. After [installing](installing.html) the ISS Knowtify Search Analytics tile, PCF operators can navigate to a URL in a browser to access the ISS Knowtify Search Analytics dashboard.
+
+##<a id='access'></a>Access the ISS Knowtify Search Analytics Dashboard
+
+To access the ISS Knowtify Search Analytics dashboard, perform the following steps:
+
+1. Navigate to the Ops Manager Installation Dashboard and click the ISS Knowtify Search Analytics tile.
+1. From the **Settings** tab, click **KLA-CLOUD Configuration**.
+1. Record the value for **Apps Domain**.
+1. Navigate to `http://kla.YOUR-APPS-DOMAIN/kla` to access the dashboard.
+
+##<a id='configure'></a>Configure the ISS Knowtify Search Analytics Dashboard
+
+The ISS Knowtify Search Analytics dashboard consists of panels that display analytics information. 
+
+### <a id='rows'></a>Creating and Deleting Rows 
+
+1. Click **Add a Row** underneath the last line to open the **Dashboard Settings** menu. 
+1. To create a row, enter a title for the new row and the tallness of the line and click **Create Row**. To move the new row, click the up and down bolts.
+1. To delete a row, click **Delete a Row**.
+1. Snap **Close** to return to the dashboard.
+
+### <a id='edit-panels'></a>Including and Editing Panels
+
+1. Click the + symbol on the left side of a row to add additional panels. If this symbol does not appear, the row is full. 
+1. On the line design pop-up, click the **Include Panel** tab. Refer to the [Dashboard Panel Types](#panel-types) section below for more information on the different panel types.
+1. From the **Add Panel** tab, customize the panel properties.
+
+## <a id='panels'></a>Dashboard Panel Types
+
+The following list includes the different panels that you can use to display information in your dashboard.
+
+### Bettermap Panel
+
+The bettermap panel displays latitude and longitude tags in groups within a predefined bounding box of a map. The limit for data points  prioritizes recent points. For example, if there are 100,000 points, and only 10 are visible, only the most recent 10 will be shown.
+
+### Column Panel
+
+A column panel nests defined child panels. When defining nested panels, you must define all properties before creating the column panel.
+
+### Filtering Panel
+
+The filtering panel shows breadcrumbs for dates or filed filters currently applied to the dashboard. The filters are applied from left to right and can be deleted in any order. You may need to refresh the dashboard to see
+changes. 
+
+### Heatmap Panel
+
+The heatmap panel provides a heat map table representing summary counts across facets with a color-coded map at each cell in the table.
+
+### Histogram Panel
+
+The histogram panel shows a time series view of the current query. This panel  queries in a time-stamped sequence to lighten the load on your Solr instance. 
+
+Configuration of this panel involves the following parameters:
+
+* **Mode**: The value for the y-axis. The options are count or values.
+When choosing values, you must select a field to use as the basis for the values. This field must have a numeric field type. You can also select a Group By Field, which cannot be a multi-valued field, and creates many charts.
+* **Time_field**: The value for the x-axis. This is the field to use for display of the time information for the histogram.
+* **Chart Settings**:
+    * **Bars**: Enable to show bars on the chart.
+    * **Lines**: Enable to show lines on the chart. When enabled a few more settings will be available:
+    * **Line Fill**: The fill area, from 0-10.
+    * **Line Width**: The width of the lines, in pixels.
+    * **Smooth**: Enable to remove 0 values from lines.
+    * **Points**: Enable to show points on the chart.
+    * **Stack**: Enable to stack many series together.
+    * **Percent**: Enable to show the stack as a percentage of the total (only displayed when stack is enabled).
+    * **Legend**: Enable to show the legend.
+    * **xAxis**: Enable to display the x-axis values.
+    * **yAxis**: Enable to display the y-axis values.
+    * **Time correction**: UTC always display times in UTC. Otherwise, time correction is applied.
+* **Selectable**:
+    * **Zoom Links**: Zoom in/out in time.
+    * **View Options**: Enable to show an options section.
+    * **Auto-interval**: The chart to scale with intervals.
+    * **Resolution**: When Auto-interval is enabled, a best effort will be made to show this number of bars.
+    * **Tooltip Settings**: Makes "hover over" pop-up help visible.
+    * **Stacked Values**: Data will display as cumulative, or as individual values.
+    * **Display Query**: Alias will show in the tooltip, with no alias is set, it shows the entire query.
+
+### Map Panel
+
+A map panel displays a map of shaded states using faceted fields that contain 2-letter state codes. More hits are indicated with darker shading.
+
+This panel has the following properties:
+
+* **Field**: Solr field with a 2-letter code used for location data.
+* **Max**: The maximum number of states to plot. The default is 100. Only the Max number of states will be shaded. If set to 10 only the top 10 states in a given category will have shading.
+* **Map**: US/World or Europe. Data outside the map will not be shown. 
+* **Mode**: Count, mean, maximum, minimum or sum. To use any mode except count, the field type must be numeric.
+* **Decimal Points**: digits to display after decimal point.
+
+### Query Panel
+
+The query panel provides a search box for filtering all dashboard data.
+A best practice is to include this at the top of your dashboard.
+
+### Range Facet Panel
+
+A Range Facet panel provides a histogram view across any numeric field using Solr's range facet functionality. It is similar to the time series histogram, and allows selection of ranges and zooming in or out to the desired numeric
+range. Range selections in the panel are reflected across the entire dashboard.
+
+This panel has the following properties:
+
+* **rangeField**: The rangeField defines the field in the index to use as the basis for the range. It must use an integer-based field type.
+* **Chart Settings**:
+    * **Bars**: Enable to show bars on the chart.
+    * **Lines**: Enable to show lines on the chart. When this option is chosen, additional options are available:
+    * **Line Fill**: The fill area, from 0-10.
+    * **Line Width**: The width of lines, in pixels.
+    * **Smooth**: Enable to remove 0 values from lines.
+    * **Points**: Enable to show points on the chart.
+    * **Legend**: Enable to show the chart legend.
+    * **x-axis**: Enable to show the x-axis values.
+    * **y-axis**: Enable to show the y-axis values.
+* **Selectable**:
+    * **Zoom Links**: Enable to allow uses to zoom out in time.
+    * **View Options**: Enable to show an options section.
+    * **Minimum**: Define the minimum value to display.
+    * **Maximum**: Define the maximum value to display.
+    * **Interval**: Define the interval between displayed values.
+
+### Table Panel
+
+A table panel creates a grid of field values from the Solr index based on filters applied to the dashboard. Only selected fields are displayed in the table. Table entries expand on click to show all document fields. 
+
+Export documents from the table to CSV, XML or JSON by clicking the **Export** icon. Add new fields by clicking field names from the left list
+on the panel.
+
+This panel has the following properties:
+
+* **Add Column**: Enter the field(s) you would like to see in the table. Enter as many fields as you want, but too
+many columns may require you to scroll horizontally to see all of your data.Click '+' button to add a field, on the right in the **Columns** section. Click on a column to remove it from the list.
+* **Options**: The display options allow defining how the table is displayed.
+    * **Header**: Enable to see a header row in the table.
+    * **Sorting**: Enable to be able to sort the data in the table.
+    * **Sort**: Choose the field to sort on. Also choose the sort order by selecting the up or down carat to the right of the column name.
+    * **Font Size**: Choose the font size for the display of the data.
+    * **Trim Factor**: If the data is too long to fit in the column at your desired width, you can configure the point at which the data will be "trimmed" from display.
+* **Paging**: Configure how to show data on different pages.
+    * **Show Controls**: Show page forward and back options.
+    * **Overflow**: Allows scrollable page to fit large records, or enable overflow to expand the size of the panel to fit all data for that page.
+    * **Per Page**: The number of items to display on each page.
+    * **Page Limit**: Maximum pages to display.
+    * **Pageable**: Total number of items that will displayed in the table over all pages.
+
+### Terms Panel
+
+A terms panel displays a Solr facet query as a pie chart, bar chart, or a table. Statistics fields display as a min/max/mean sum, faceted by the Solr facet field as pie chart, bar chart, or table.
+
+This panel has the following properties:
+
+* **Field**: Faceted field used as basis of display.
+* **Length**: Most number of terms to display.
+* **Order**: Sort order.
+* **Style**: bar, pie or table.
+* **Legend**: No legend for bar or pie styles, for tables display legend above or below the data.
+* **Font Size**: Only for tables, a font size option.
+* **Missing**: Enable to display missing values.
+* **Other**:
+    * **Donut**: For pie charts, a donut will have an empty circle in the center.
+    * **Tilt**: For pie charts, this flattens the pie/donut.
+    * **Labels**: Shows labels in the chart.
+    * **Mode**: Count, mean, min, max, or sum.When not using count, a numerical field must be chosen for Stats Field.
+    * **Stats Field**: Must be a numeric field, for non-count mode.
+    * **Display Precision**: Displayed digits a decimal point.
+
+### Text Panel
+
+A free-text panel that allows you to add descriptions or other text to your dashboard. Uses plain text, Markdown, or HTML.
+
+### Ticker Panel
+
+A ticker panel is a stock-ticker-style show of queries moving over time. Ticker panels have one primary property, **Time Ago**, defined as the point in time used as the basis for comparison.
+
+### Timepicker Panel
+
+A timepicker panel selects for time range.
+
+This panel has the following properties:
+
+* **Default Mode**: The options are **relative**, which provides a series of relative time frames, such as 30 days ago, 1 year, etc.; **absolute**, where you define the start and end dates; or **since**, where you define only the starting date, with the current date assumed.
+* **Time Field**: Shows temporal data.
+* **Relative Time Options**: If Default Mode is set to relative, provide a comma-separated list of time options, such as `1m,5m,1h, 2h, 4h, 1d`. With the default range the panel to span should be at least 6, to prevent overrunning the edges of the panel.
+* **Default Timespan**: The time option that should be selected as a default.
+* **Auto-refresh**:
+    * **Enable**: Auto-refresh enable/disable.
+    * **Interval**: Refresh interval in seconds.
+    * **Minimum Interval**: The minimum interval, in seconds, to refresh.
