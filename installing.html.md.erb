@@ -15,9 +15,16 @@ Before installing the Knowtify Search Analytics tile, consult the [ISS Knowtify 
 
 1. Click **Add** next to the uploaded ISS Knowtify Search Analytics tile in the Ops Manager **Available Products** view to add it to your staging area.
 
-1. Click the newly added tile.
+1. Click the newly added **Knowtify Search Analytics** tile.
 
-1. From the **Settings** tab, click **KLA-CLOUD Configuration** and enter the appropriate values for each field according to your PCF installation. The last five fields provide the optional ability to enter custom Grok lines that will be used by the Logstash component to parse log files. See the Grok [documentation](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html) for more information.
+1. From the **Settings** tab, click **KSA-CLOUD Configuration**. 
+
+	<%= image_tag("ksa-cloud-config.png") %>
+
+	Complete the following fields:
+	* **Solr Port**: The port that the Solr server runs on.
+	* **Logstash Listen Port**: The port that Logstash listens on.
+	* **Custom Grok line**: These five lines provide the optional ability to enter custom Grok lines that will be used by the Logstash component to parse log files. See the Grok [documentation](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html) for more information.
 
 1. Click **Save**.
 
@@ -31,9 +38,9 @@ Operators can configure ISS Knowtify Search Analytics to ingest log data from PC
 
 To configure log data ingestion, you must know your Logstash server IP address and port number. If you do not, perform the following steps to retrieve them:
 
-1. Navigate to the Ops Manager Installation Dashboard and click the ISS Knowtify Search Analytics tile.
+1. Navigate to the Ops Manager Installation Dashboard and click the **Knowtify Search Analytics** tile.
 
-1. From the **Settings** tab, click **KLA-CLOUD Configuration**.
+1. From the **Settings** tab, click **KSA-CLOUD Configuration**.
 
 1. Record the value for the **Logstash Listen Port**. The default is 9514.
 
@@ -47,13 +54,15 @@ To configure ISS Knowtify Search Analytics to ingest log data from PCF Elastic R
 
 1. Return to the Ops Manager Installation Dashboard and click the **Pivotal Elastic Runtime** tile.
 
-1. From the **Settings tab**, click **External Endpoints**.
+1. From the **Settings tab**, click **System Logging**.
 
-1. In the first box enter the Logstash Server IP address recorded above.
+1. For **External Syslog Aggregator Hostname**, enter the Logstash Server IP address recorded above.
 
-1. In the second box enter the Logstash Listen Port recorded above.
+1. For **External Syslog Aggregator Port**, enter the Logstash Listen Port recorded above.
 
-1. In the third box enter `TCP protocol`.
+1. For **External Syslog Network Protocol**, select **TCP protocol**.
+
+1. Enter a value for the **Syslog Drain Buffer**.
 
 1. Click **Save**.
 
