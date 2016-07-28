@@ -1,9 +1,9 @@
 ---
-title: KLA for Pivotal Cloud Foundry&reg;
+title: KLA for Pivotal Cloud Foundry
 owner: London Services
 ---
 
-# Resource requirements for KLA for Pivotal Cloud Foundry&reg;
+# Resource requirements for KLA for Pivotal Cloud Foundry
 These are the default resource and IP requirements for installing the tile:
 <table border="1" class="nice">
 	<tr>

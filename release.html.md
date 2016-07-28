@@ -1,9 +1,9 @@
 ---
-title: KLA for Pivotal Cloud Foundry&reg;
+title: KLA for Pivotal Cloud Foundry
 owner: London Services
 ---
 
-Release notes for [KLA for Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/p-knowtify)
+Release notes for [KLA for Pivotal Cloud Foundry](https://network.pivotal.io/products/p-knowtify)
 
 ### 0.1.1
 **Beta Release Date: 22 October 2015**
