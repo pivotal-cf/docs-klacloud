@@ -72,7 +72,7 @@ To configure ISS Knowtify Search Analytics to ingest log data from PCF Elastic R
 
 To configure ISS Knowtify Search Analytics to ingest log data from applications, perform the following steps:
 
-1. [Download](https://github.com/cloudfoundry/cli#downloads) and install the Cloud Foundry Command Line Interface (cf CLI). For more information, see the [Installing the cf Command Line Interface](../pivotalcf/cf-cli/install-go-cli.html) topic.
+1. [Download](https://github.com/cloudfoundry/cli#downloads) and install the Cloud Foundry Command Line Interface (cf CLI). For more information, see the [Installing the cf CLI](../pivotalcf/cf-cli/install-go-cli.html) topic.
 
 1. Create a user-provided service instance, replacing SERVICE-INSTANCE-NAME with the name of the instance, LOGSTASH-IP with your Logstash server IP address, and LOGSTASH-PORT with your Logstash server port number:
 	<pre class="terminal">$ cf cups SERVICE-INSTANCE-NAME -l syslog://LOGSTASH-IP:LOGSTASH-PORT</pre>
